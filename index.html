@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Γράφω με συνοχή | Συνδετικές και διαρθρωτικές λέξεις και φράσεις στα Νέα Ελληνικά</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #0b8f3e;
+      --green-dark: #066a2f;
+      --yellow: #ffdf00;
+      --yellow-soft: #fff8c9;
+      --blue-accent: #0a4a8a;
+      --paper: #fffef7;
+      --ink: #213126;
+      --muted: #557061;
+      --border: #dbe8db;
+      --shadow: 0 12px 26px rgba(11, 143, 62, 0.10);
+      --begin: #eef9f0;
+      --build: #fff8dc;
+      --shift: #fff2d9;
+      --explain: #eef8fb;
+      --support: #f6f1d3;
+      --position: #eff7e9;
+      --respond: #fff4bf;
+      --end: #f2f8e9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(11,143,62,0.08), transparent 22%),
+        radial-gradient(circle at top right, rgba(255,223,0,0.18), transparent 22%),
+        linear-gradient(180deg, #fbfff7 0%, #fffef4 100%);
+    }
+    .page-shell { width: min(1240px, calc(100% - 28px)); margin: 0 auto; }
+    .hero { padding: 20px 0 10px; }
+    .hero-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(251,255,247,0.96));
+      border: 1px solid rgba(11,143,62,0.16);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+    .logo-wrap { display: flex; align-items: center; justify-content: center; padding: 6px; }
+    .logo-wrap img { width: 100%; max-width: 172px; height: auto; display: block; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.07)); }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px;
+      background: var(--yellow-soft); color: var(--green-dark); font-weight: 800; font-size: 0.88rem; letter-spacing: 0.01em; margin-bottom: 12px;
+      border: 1px solid rgba(11,143,62,0.10);
+    }
+    h1 { margin: 0 0 8px; color: var(--green-dark); font-size: clamp(2rem, 4.8vw, 3.4rem); line-height: 1.06; }
+    .subtitle { margin: 0; color: var(--blue-accent); font-weight: 700; font-size: clamp(1.02rem, 2vw, 1.3rem); line-height: 1.45; }
+    .hero-copy { margin-top: 12px; max-width: 800px; color: var(--muted); line-height: 1.7; font-size: 1rem; }
+    .sticky-tools { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(10px); background: rgba(251,255,247,0.88); border-bottom: 1px solid rgba(11,143,62,0.10); margin-top: 14px; }
+    .tools-inner { width: min(1240px, calc(100% - 28px)); margin: 0 auto; padding: 10px 0; display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center; }
+    .search-wrap { position: relative; }
+    .search-wrap input { width: 100%; padding: 14px 16px 14px 46px; border-radius: 999px; border: 1px solid var(--border); font-size: 0.98rem; outline: none; background: white; color: var(--ink); box-shadow: 0 3px 10px rgba(11,143,62,0.05); }
+    .search-wrap svg { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; fill: var(--green); opacity: 0.8; }
+    .utility-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    button { border: 1px solid rgba(11,143,62,0.16); background: white; color: var(--green-dark); border-radius: 999px; padding: 9px 14px; font-weight: 700; cursor: pointer; transition: 0.18s ease; }
+    button:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(11,143,62,0.10); }
+    main { padding: 16px 0 32px; }
+    details.section-panel { background: rgba(255,255,255,0.94); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); margin-bottom: 14px; overflow: hidden; }
+    details.section-panel > summary { padding: 15px 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; background: linear-gradient(180deg, rgba(255,255,255,0.99), rgba(252,255,247,0.96)); }
+    details.section-panel > summary h2 { margin: 0 0 5px; color: var(--green-dark); font-size: clamp(1.28rem, 2.6vw, 1.9rem); }
+    details.section-panel > summary p { margin: 0; color: var(--muted); line-height: 1.55; }
+    details.section-panel > summary::after { content: '＋'; font-size: 1.55rem; line-height: 1; color: var(--green-dark); font-weight: 800; flex: 0 0 auto; }
+    details.section-panel[open] > summary::after { content: '−'; }
+    .panel-body { padding: 0 18px 14px; border-top: 1px solid rgba(11,143,62,0.08); }
+    .quick-grid, .family-nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+    .quick-btn { text-align: left; border-radius: 16px; padding: 13px 14px; background: white; border: 1px solid rgba(11,143,62,0.12); box-shadow: 0 8px 16px rgba(11,143,62,0.06); min-height: 86px; }
+    .quick-btn small { display: block; color: var(--muted); margin-top: 6px; font-weight: 600; line-height: 1.35; }
+    .family-card { border-radius: 18px; padding: 14px; border: 1px solid rgba(11,143,62,0.10); text-decoration: none; color: inherit; display: block; box-shadow: 0 8px 18px rgba(11,143,62,0.06); }
+    .family-card h3 { margin: 0 0 6px; color: var(--green-dark); font-size: 1.12rem; }
+    .family-card p { margin: 0 0 9px; color: var(--muted); line-height: 1.5; font-size: 0.95rem; }
+    .mini-tags, .legend { display: flex; flex-wrap: wrap; gap: 8px; }
+    .mini-tag { font-size: 0.8rem; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.9); border: 1px solid rgba(11,143,62,0.08); color: var(--green-dark); font-weight: 700; }
+    .family-Ξεκινώ { background: var(--begin); }
+    .family-Χτίζω { background: var(--build); }
+    .family-Αλλάζω-πορεία { background: var(--shift); }
+    .family-Εξηγώ { background: var(--explain); }
+    .family-Στηρίζω { background: var(--support); }
+    .family-Τοποθετούμαι { background: var(--position); }
+    .family-Προτείνω { background: var(--respond); }
+    .family-Κλείνω { background: var(--end); }
+    .results-bar { display: flex; justify-content: space-between; gap: 10px; align-items: center; margin-bottom: 10px; flex-wrap: wrap; }
+    .results-note { color: var(--muted); font-weight: 600; }
+    .tiny { font-size: 0.9rem; color: var(--muted); }
+    .categories { display: grid; gap: 14px; }
+    .family-section { border-radius: 22px; border: 1px solid rgba(11,143,62,0.12); overflow: hidden; box-shadow: 0 10px 18px rgba(11,143,62,0.05); }
+    .family-header { padding: 14px 18px; border-bottom: 1px solid rgba(11,143,62,0.08); }
+    .family-header h3 { margin: 0 0 5px; color: var(--green-dark); font-size: 1.3rem; }
+    .family-header p { margin: 0; color: var(--muted); }
+    .family-body { padding: 12px; display: grid; gap: 9px; }
+    details.category { background: rgba(255,255,255,0.92); border: 1px solid rgba(11,143,62,0.10); border-radius: 18px; overflow: hidden; }
+    details.category[open] { box-shadow: 0 10px 20px rgba(11,143,62,0.08); }
+    summary { list-style: none; cursor: pointer; padding: 13px 15px 11px; display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; }
+    summary::-webkit-details-marker { display: none; }
+    .summary-title { display: flex; flex-direction: column; gap: 3px; }
+    .summary-title strong { color: var(--green-dark); font-size: 1.02rem; }
+    .summary-title span { color: var(--muted); line-height: 1.45; font-size: 0.95rem; }
+    .badge { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; padding: 8px 12px; border-radius: 999px; color: var(--green-dark); font-weight: 800; background: var(--yellow); box-shadow: 0 6px 12px rgba(255,223,0,0.24); }
+    .category-content { padding: 0 15px 13px; border-top: 1px solid rgba(11,143,62,0.08); }
+    .meta-row { display: grid; grid-template-columns: 1.15fr 1fr; gap: 10px; margin-top: 10px; }
+    .example-box, .warning-box { border-radius: 14px; padding: 11px 13px; }
+    .example-box { background: #fbfff7; border: 1px solid rgba(11,143,62,0.10); }
+    .warning-box { background: #fffbea; border: 1px solid rgba(255,223,0,0.36); }
+    .box-label { display: inline-block; margin-bottom: 6px; color: var(--blue-accent); font-weight: 800; letter-spacing: 0.02em; font-size: 0.79rem; text-transform: uppercase; }
+    .phrase-grid { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 7px; }
+    .phrase-pill { padding: 7px 10px; background: white; border: 1px solid rgba(11,143,62,0.12); border-radius: 999px; color: var(--ink); font-weight: 600; cursor: pointer; transition: 0.16s ease; max-width: 100%; }
+    .phrase-pill:hover { border-color: var(--green); color: var(--green-dark); transform: translateY(-1px); }
+    .phrase-pill mark { background: #fff2a0; padding: 0 2px; border-radius: 4px; }
+    .helper-note { color: var(--muted); margin-top: 8px; font-size: 0.9rem; }
+    .confusion-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+    .confusion-card { background: white; border: 1px solid rgba(11,143,62,0.10); border-radius: 16px; padding: 14px; box-shadow: 0 8px 16px rgba(11,143,62,0.06); }
+    .confusion-card h3 { margin: 0 0 8px; color: var(--blue-accent); font-size: 1.02rem; }
+    .confusion-card p { margin: 8px 0 0; color: var(--muted); line-height: 1.58; }
+    .sample-paragraph { background: linear-gradient(180deg, #ffffff 0%, #fcfff7 100%); border: 1px solid rgba(11,143,62,0.12); border-radius: 18px; padding: 16px; line-height: 1.82; font-size: 1rem; color: #24332a; }
+    .hl { padding: 3px 7px; border-radius: 10px; font-weight: 700; cursor: pointer; border: 1px solid transparent; white-space: nowrap; }
+    .hl:hover { border-color: rgba(11,143,62,0.18); }
+    .hl-begin { background: var(--begin); color: var(--green-dark); }
+    .hl-build { background: var(--build); color: #7f6600; }
+    .hl-shift { background: var(--shift); color: #9a5a00; }
+    .hl-explain { background: var(--explain); color: var(--blue-accent); }
+    .hl-support { background: var(--support); color: #7a6800; }
+    .hl-position { background: var(--position); color: #557031; }
+    .hl-respond { background: var(--respond); color: #7d6400; }
+    .hl-end { background: var(--end); color: var(--green-dark); }
+    .legend { gap: 8px; margin-top: 12px; }
+    .legend .mini-tag { padding: 8px 12px; font-size: 0.86rem; }
+    .footer { text-align: center; color: var(--muted); font-size: 0.94rem; padding: 6px 0 28px; }
+    @media (max-width: 1024px) {
+      .tools-inner { grid-template-columns: 1fr; }
+      .quick-grid, .family-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .meta-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .hero-card { grid-template-columns: 1fr; text-align: center; }
+      .logo-wrap img { max-width: 136px; }
+      .quick-grid, .family-nav, .confusion-grid { grid-template-columns: 1fr; }
+      summary { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell hero">
+    <div class="hero-card">
+      <div class="logo-wrap"><img src="logo_GR.png" alt="Παναγιώτης Δόμβρος ED Hub λογότυπο" /></div>
+      <div>
+        <div class="eyebrow">Εργαλείο οργάνωσης λόγου</div>
+        <h1>Γράφω με συνοχή</h1>
+        <p class="subtitle">Συνδετικές και διαρθρωτικές λέξεις και φράσεις στα Νέα Ελληνικά</p>
+        <p class="hero-copy">Βρες γρήγορα τη σωστή φράση, κατάλαβε τι δουλειά κάνει και οργάνωσε το κείμενό σου με μεγαλύτερη σαφήνεια και ροή.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sticky-tools">
+    <div class="tools-inner">
+      <label class="search-wrap" aria-label="Αναζήτηση συνδετικών λέξεων ή κατηγοριών">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2a8 8 0 105.293 14.293l4.207 4.207 1.414-1.414-4.207-4.207A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"></path></svg>
+        <input id="searchInput" type="search" placeholder="Αναζήτησε λέξη, κατηγορία ή λειτουργία... π.χ. αντίθεση, επομένως, παράδειγμα" />
+      </label>
+      <div class="utility-group">
+        <button id="openAllBtn" type="button">Άνοιγμα όλων</button>
+        <button id="closeAllBtn" type="button">Κλείσιμο όλων</button>
+      </div>
+      <div class="utility-group">
+        <button id="clearSearchBtn" type="button">Καθαρισμός</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="page-shell">
+    <details class="section-panel">
+      <summary>
+        <div>
+          <h2>Θέλω να...</h2>
+          <p>Διάλεξε τη λειτουργία που χρειάζεσαι και πήγαινε κατευθείαν στη σωστή κατηγορία.</p>
+        </div>
+      </summary>
+      <div class="panel-body">
+        <div class="quick-grid" id="quickGrid"></div>
+      </div>
+    </details>
+
+    <details class="section-panel">
+      <summary>
+        <div>
+          <h2>Η μεγάλη εικόνα</h2>
+          <p>Δες τις βασικές οικογένειες, ώστε να θυμάσαι πιο εύκολα ποια δουλειά κάνει κάθε ομάδα.</p>
+        </div>
+      </summary>
+      <div class="panel-body">
+        <div class="family-nav" id="familyNav"></div>
+      </div>
+    </details>
+
+    <details class="section-panel" id="master-list">
+      <summary>
+        <div>
+          <h2>Περιήγηση στον πλήρη οδηγό</h2>
+          <p>Άνοιξε όποια κατηγορία χρειάζεσαι και πάτησε πάνω σε μια φράση για να την αντιγράψεις.</p>
+        </div>
+      </summary>
+      <div class="panel-body">
+        <div class="results-bar">
+          <div><p class="results-note" id="resultsNote">Προβάλλονται όλες οι κατηγορίες.</p></div>
+          <div class="tiny">Συμβουλή: πάτησε πάνω σε μια φράση για αντιγραφή.</div>
+        </div>
+        <div class="categories" id="categories"></div>
+      </div>
+    </details>
+
+    <details class="section-panel" id="confusions">
+      <summary>
+        <div>
+          <h2>Συχνές συγχύσεις</h2>
+          <p>Ορισμένες κατηγορίες μοιάζουν μεταξύ τους, αλλά δεν κάνουν ακριβώς την ίδια δουλειά.</p>
+        </div>
+      </summary>
+      <div class="panel-body">
+        <div class="confusion-grid" id="confusionGrid"></div>
+      </div>
+    </details>
+
+    <details class="section-panel" id="model">
+      <summary>
+        <div>
+          <h2>Μικρό μοντέλο σε δράση</h2>
+          <p>Πάτησε σε μια χρωματισμένη φράση για να μεταφερθείς στην αντίστοιχη κατηγορία.</p>
+        </div>
+      </summary>
+      <div class="panel-body">
+        <div class="sample-paragraph">
+        <span class="hl hl-begin" data-target="Έναρξη">Καταρχάς,</span>
+        <span class="hl hl-begin" data-target="Οριοθέτηση θέματος">το βασικό ζήτημα είναι</span>
+        η συνοχή στον γραπτό λόγο.
+        <span class="hl hl-begin" data-target="Αρίθμηση / Διαδοχή">Αρχικά,</span>
+        πολλοί μαθητές δυσκολεύονται να οργανώσουν τις ιδέες τους.
+        <span class="hl hl-build" data-target="Προσθήκη">Επιπλέον,</span>
+        συχνά δεν είναι βέβαιοι ποια φράση ταιριάζει κάθε φορά.
+        <span class="hl hl-build" data-target="Έμφαση">Πάνω απ’ όλα,</span>
+        η σαφήνεια είναι αυτό που κάνει ένα κείμενο πραγματικά αποτελεσματικό.
+        <span class="hl hl-build" data-target="Ομοιότητα / Παραλληλισμός">Αντίστοιχα,</span>
+        και στον προφορικό λόγο η σωστή μετάβαση βοηθά τον ακροατή να παρακολουθεί.
+        <span class="hl hl-shift" data-target="Αντίθεση">Ωστόσο,</span>
+        η αποστήθιση πολλών εκφράσεων δεν αρκεί.
+        <span class="hl hl-shift" data-target="Παραχώρηση">Αν και</span>
+        οι λίστες είναι χρήσιμες, χρειάζεται και στοχευμένη εξάσκηση.
+        Αυτό <span class="hl hl-explain" data-target="Αιτία / Αιτιολόγηση">οφείλεται σε</span>
+        πραγματικές ανάγκες οργάνωσης του λόγου.
+        <span class="hl hl-explain" data-target="Αποτέλεσμα / Συνέπεια">Επομένως,</span>
+        οι μαθητές γράφουν πιο καθαρά όταν ξέρουν τη λειτουργία κάθε φράσης.
+        <span class="hl hl-explain" data-target="Σκοπός">Προκειμένου να</span>
+        βελτιωθεί η γραφή, οι συνδετικές λέξεις πρέπει να διδάσκονται μέσα σε παραδείγματα.
+        <span class="hl hl-support" data-target="Παράδειγμα / Εικονογράφηση">Για παράδειγμα,</span>
+        η φράση «κατά συνέπεια» προετοιμάζει τον αναγνώστη για αποτέλεσμα.
+        <span class="hl hl-support" data-target="Διευκρίνιση">Πιο συγκεκριμένα,</span>
+        δεν αρκεί να ξέρεις τη λέξη· πρέπει να ξέρεις και τη δουλειά που κάνει.
+        <span class="hl hl-support" data-target="Αναδιατύπωση / Επανέκφραση">Με άλλα λόγια,</span>
+        η γνώση της λειτουργίας προηγείται της αποστήθισης.
+        <span class="hl hl-position" data-target="Προσωπική θέση / Άποψη">Κατά τη γνώμη μου,</span>
+        η διδασκαλία αυτή πρέπει να γίνεται σταδιακά.
+        <span class="hl hl-position" data-target="Ακαδημαϊκή / Απρόσωπη θέση">Μπορεί να υποστηριχθεί ότι</span>
+        η ρητή διδασκαλία της συνοχής βελτιώνει την ποιότητα των κειμένων.
+        <span class="hl hl-position" data-target="Επιφύλαξη / Μετριασμός">Είναι πιθανό να</span>
+        χρειάζονται κάποιοι μαθητές περισσότερα παραδείγματα από άλλους.
+        <span class="hl hl-position" data-target="Βεβαιότητα / Ισχυρός ισχυρισμός">Είναι σαφές ότι</span>
+        η σωστή οργάνωση κάνει το κείμενο πιο πειστικό.
+        <span class="hl hl-respond" data-target="Λύση / Πρόταση / Παρέμβαση">Για να αντιμετωπιστεί αυτό,</span>
+        οι φράσεις μπορούν να ομαδοποιηθούν ανά λειτουργία.
+        <span class="hl hl-respond" data-target="Έκβαση / Αναμενόμενο όφελος">Αυτό θα βοηθούσε να</span>
+        βρίσκουν οι μαθητές γρηγορότερα ό,τι χρειάζονται.
+        <span class="hl hl-end" data-target="Κατακλείδα / Συνοψίζοντας">Συνοψίζοντας,</span>
+        η συνοχή χτίζεται όταν οι ιδέες συνδέονται με ακρίβεια και μέτρο.
+</div>
+        <div class="legend">
+          <span class="mini-tag family-Ξεκινώ">Ξεκινώ</span>
+          <span class="mini-tag family-Χτίζω">Χτίζω</span>
+          <span class="mini-tag family-Αλλάζω-πορεία">Αλλάζω πορεία</span>
+          <span class="mini-tag family-Εξηγώ">Εξηγώ</span>
+          <span class="mini-tag family-Στηρίζω">Στηρίζω</span>
+          <span class="mini-tag family-Τοποθετούμαι">Τοποθετούμαι</span>
+          <span class="mini-tag family-Προτείνω">Προτείνω</span>
+          <span class="mini-tag family-Κλείνω">Κλείνω</span>
+        </div>
+      </div>
+    </details>
+
+    <div class="footer">Δημιουργία: Παναγιώτης Δόμβρος, Εκπαιδευτικός Αγγλικής Γλώσσας &amp; Θεατρολόγος, Διευθυντής 1ου Γυμνασίου Πυλαίας</div>
+  </main>
+
+  <script>
+    const categories = [{"num": 1, "name": "Έναρξη", "function": "ανοίγουν ένα κείμενο, μια παράγραφο ή μια γραμμή σκέψης.", "items": ["Καταρχάς,", "Αρχικά,", "Πρώτα απ’ όλα,", "Για αρχή,", "Σε πρώτο επίπεδο,", "Ως αφετηρία,", "Στο ξεκίνημα,", "Εισαγωγικά,", "Ας ξεκινήσουμε από...", "Ένα πρώτο σημείο είναι ότι...", "Αφετηρία της συζήτησης είναι...", "Στην αρχή αξίζει να επισημανθεί ότι..."], "family": "Ξεκινώ", "example": "Καταρχάς, κάθε κείμενο χρειάζεται καθαρή αρχή και σαφή προσανατολισμό.", "warning": ""}, {"num": 2, "name": "Οριοθέτηση θέματος", "function": "δηλώνουν ποιο ακριβώς είναι το θέμα ή το ερώτημα.", "items": ["Το βασικό ζήτημα είναι...", "Το κεντρικό ζήτημα είναι...", "Το κεντρικό ερώτημα είναι...", "Το θέμα που τίθεται είναι...", "Η συζήτηση επικεντρώνεται...", "Στο επίκεντρο βρίσκεται...", "Το ζήτημα που μας απασχολεί είναι...", "Κομβικό σημείο είναι...", "Το ερώτημα που προκύπτει είναι...", "Η παρούσα ανάλυση εξετάζει...", "Το υπό εξέταση θέμα είναι...", "Η προβληματική εστιάζει..."], "family": "Ξεκινώ", "example": "Το κεντρικό ερώτημα είναι αν η τεχνολογία βελτιώνει πράγματι τη μάθηση.", "warning": ""}, {"num": 3, "name": "Αρίθμηση / Διαδοχή", "function": "οργανώνουν την πορεία των ιδεών.", "items": ["Πρώτον,", "Δεύτερον,", "Τρίτον,", "Αρχικά,", "Στη συνέχεια,", "Έπειτα,", "Κατόπιν,", "Ακολούθως,", "Παράλληλα,", "Στο επόμενο στάδιο,", "Ένα επόμενο σημείο είναι...", "Τελικά,", "Τέλος,"], "family": "Ξεκινώ", "example": "Αρχικά, παρουσιάζουμε το θέμα· στη συνέχεια, εξετάζουμε τα επιχειρήματα.", "warning": ""}, {"num": 4, "name": "Προσθήκη", "function": "προσθέτουν νέο, συγγενές ή ενισχυτικό υλικό.", "items": ["Επίσης,", "Ακόμη,", "Επιπλέον,", "Επιπροσθέτως,", "Πέρα από αυτό,", "Πέραν τούτου,", "Παράλληλα,", "Ταυτόχρονα,", "Εξάλλου,", "Μαζί με αυτό,", "Σε αυτό προστίθεται και το ότι...", "Ένα ακόμη στοιχείο είναι ότι...", "Δεν είναι μόνο αυτό· ...", "Στο ίδιο πλαίσιο, ..."], "family": "Χτίζω", "example": "Επιπλέον, οι σωστές συνδετικές λέξεις βοηθούν τον αναγνώστη να ακολουθεί ευκολότερα τη σκέψη.", "warning": ""}, {"num": 5, "name": "Έμφαση", "function": "τονίζουν τη βαρύτητα ενός σημείου.", "items": ["Πράγματι,", "Όντως,", "Ιδίως,", "Ιδιαίτερα,", "Κυρίως,", "Πάνω απ’ όλα,", "Το σημαντικότερο,", "Αξίζει να τονιστεί ότι...", "Πρέπει να υπογραμμιστεί ότι...", "Έχει ιδιαίτερη σημασία το ότι...", "Δεν πρέπει να παραβλέπουμε ότι...", "Κομβικής σημασίας είναι ότι...", "Αυτό ακριβώς είναι το κρίσιμο σημείο."], "family": "Χτίζω", "example": "Πάνω απ’ όλα, η συνοχή κάνει το κείμενο πιο πειστικό και πιο καθαρό.", "warning": ""}, {"num": 6, "name": "Ομοιότητα / Παραλληλισμός", "function": "δείχνουν αναλογία, αντιστοιχία ή παραλληλία.", "items": ["Ομοίως,", "Παρομοίως,", "Αντίστοιχα,", "Ανάλογα,", "Με τον ίδιο τρόπο,", "Κατά τον ίδιο τρόπο,", "Όπως... έτσι και...", "Σε ανάλογη λογική,", "Στην ίδια κατεύθυνση,", "Κάτι ανάλογο ισχύει και για...", "Το ίδιο συμβαίνει και με...", "Σε παρόμοιο πλαίσιο,", "Αυτό παραπέμπει σε μια ανάλογη περίπτωση."], "family": "Χτίζω", "example": "Αντίστοιχα, και στον προφορικό λόγο οι σωστές μεταβάσεις βοηθούν τη ροή.", "warning": ""}, {"num": 7, "name": "Αντίθεση", "function": "εισάγουν αντίθετη ή διαφορετική όψη.", "items": ["Όμως,", "Ωστόσο,", "Αλλά,", "Αντίθετα,", "Αντιθέτως,", "Από την άλλη,", "Από την άλλη πλευρά,", "Σε αντίθεση με αυτό,", "Στον αντίποδα,", "Αντί να...", "Διαφορετικά συμβαίνει όταν...", "Εντούτοις,", "Παρ’ όλα αυτά,"], "family": "Αλλάζω πορεία", "example": "Ωστόσο, η συχνή χρήση πολλών συνδετικών δεν σημαίνει πάντα καλύτερο κείμενο.", "warning": "Πρόσεξε: η αντίθεση φέρνει μια διαφορετική ή αντίθετη πλευρά, χωρίς απαραίτητα να παραχωρεί κάτι πρώτα."}, {"num": 8, "name": "Παραχώρηση", "function": "αναγνωρίζουν μερικώς μια θέση πριν αλλάξει η πορεία του λόγου.", "items": ["Αν και...", "Παρόλο που...", "Μολονότι...", "Παρά το γεγονός ότι...", "Έστω κι αν...", "Ακόμη κι αν...", "Είναι αλήθεια ότι..., αλλά...", "Βέβαια..., όμως...", "Ασφαλώς..., ωστόσο...", "Δεν χωρά αμφιβολία ότι..., παρ’ όλα αυτά...", "Ακόμη κι αν δεχτούμε ότι..., ...", "Μπορεί να ισχύει ότι..., όμως..."], "family": "Αλλάζω πορεία", "example": "Αν και η θεωρία είναι χρήσιμη, οι μαθητές μαθαίνουν καλύτερα όταν τη βλέπουν μέσα σε πραγματικά παραδείγματα.", "warning": "Πρόσεξε: η παραχώρηση δέχεται κάτι εν μέρει πριν μετατοπίσει το επιχείρημα."}, {"num": 9, "name": "Διόρθωση / Ανασκευή / Ακρίβεια", "function": "διορθώνουν, περιορίζουν ή ακριβολόγουν.", "items": ["Μάλλον,", "Ή μάλλον,", "Για την ακρίβεια,", "Ακριβέστερα,", "Πιο σωστά,", "Ορθότερα,", "Καλύτερα να πούμε...", "Στην πραγματικότητα,", "Όχι τόσο... όσο...", "Όχι..., αλλά...", "Για να ακριβολογούμε,", "Αν θέλουμε να είμαστε ακριβείς, ...", "Αυτό θα έπρεπε να διατυπωθεί ως εξής: ..."], "family": "Αλλάζω πορεία", "example": "Για την ακρίβεια, δεν αρκεί να ξέρεις πολλές λέξεις· πρέπει να ξέρεις πότε και γιατί τις χρησιμοποιείς.", "warning": ""}, {"num": 10, "name": "Αιτία / Αιτιολόγηση", "function": "εξηγούν γιατί συμβαίνει κάτι.", "items": ["Επειδή...", "Διότι...", "Γιατί...", "Αφού...", "Καθώς...", "Λόγω...", "Εξαιτίας...", "Χάρη σε...", "Αυτό οφείλεται σε...", "Η αιτία είναι ότι...", "Ο λόγος είναι ότι...", "Αυτό πηγάζει από...", "Αυτό απορρέει από...", "Αυτό συνδέεται με το ότι..."], "family": "Εξηγώ", "example": "Αυτό οφείλεται σε έλλειψη σαφούς οργάνωσης των ιδεών.", "warning": "Πρόσεξε: η αιτία εξηγεί το γιατί· το αποτέλεσμα δείχνει τι προκύπτει μετά."}, {"num": 11, "name": "Αποτέλεσμα / Συνέπεια", "function": "δηλώνουν τι προκύπτει από κάτι προηγούμενο.", "items": ["Έτσι,", "Γι’ αυτό,", "Επομένως,", "Συνεπώς,", "Άρα,", "Κατά συνέπεια,", "Ως αποτέλεσμα,", "Ως επακόλουθο,", "Οπότε,", "Με αποτέλεσμα να...", "Από αυτό προκύπτει ότι...", "Αυτό οδηγεί στο να...", "Το αποτέλεσμα είναι ότι...", "Αυτό έχει ως συνέπεια να..."], "family": "Εξηγώ", "example": "Επομένως, ο αναγνώστης καταλαβαίνει πιο εύκολα τη λογική πορεία του κειμένου.", "warning": "Πρόσεξε: αυτή η ομάδα λειτουργεί καλύτερα όταν η αιτία έχει ήδη γίνει σαφής."}, {"num": 12, "name": "Σκοπός", "function": "δηλώνουν στόχο ή επιδίωξη.", "items": ["Για να...", "Προκειμένου να...", "Με στόχο να...", "Με σκοπό να...", "Ώστε να...", "Έτσι ώστε να...", "Με την επιδίωξη να...", "Με την πρόθεση να...", "Αποσκοπώντας στο να...", "Προς τον σκοπό αυτό,", "Για τον σκοπό αυτό,", "Με γνώμονα να...", "Με τελικό στόχο να..."], "family": "Εξηγώ", "example": "Προκειμένου να γίνει πιο πειστικό το επιχείρημα, χρειάζονται σαφείς συνδέσεις ανάμεσα στις ιδέες.", "warning": ""}, {"num": 13, "name": "Προϋπόθεση / Όρος", "function": "δηλώνουν όρο, εξάρτηση ή απαραίτητη συνθήκη.", "items": ["Αν...", "Εάν...", "Μόνο αν...", "Εφόσον...", "Με την προϋπόθεση ότι...", "Υπό τον όρο ότι...", "Αρκεί να...", "Σε περίπτωση που...", "Αν συμβεί αυτό, ...", "Διαφορετικά, ...", "Αλλιώς, ...", "Εκτός αν...", "Στην αντίθετη περίπτωση, ...", "Υπό αυτές τις συνθήκες, ..."], "family": "Εξηγώ", "example": "Αρκεί να χρησιμοποιούνται με μέτρο, οι συνδετικές λέξεις βελτιώνουν αισθητά το ύφος.", "warning": ""}, {"num": 14, "name": "Παράδειγμα / Εικονογράφηση", "function": "φωτίζουν την ιδέα μέσω παραδείγματος.", "items": ["Για παράδειγμα,", "Παραδείγματος χάριν,", "Λ.χ.,", "Ενδεικτικά,", "Χαρακτηριστικό παράδειγμα είναι...", "Ενδεικτική περίπτωση είναι...", "Ας πάρουμε την περίπτωση...", "Αυτό φαίνεται καθαρά στο...", "Όπως φαίνεται από...", "Μια τέτοια περίπτωση είναι...", "Αρκεί να σκεφτούμε...", "Ας θυμηθούμε...", "Χαρακτηριστικά, ..."], "family": "Στηρίζω", "example": "Για παράδειγμα, η φράση «επομένως» δείχνει καθαρά ότι ακολουθεί συμπέρασμα ή συνέπεια.", "warning": ""}, {"num": 15, "name": "Διευκρίνιση", "function": "αποσαφηνίζουν το νόημα και αποτρέπουν παρερμηνείες.", "items": ["Για να γίνει σαφές,", "Για να είμαστε σαφείς,", "Για να το ξεκαθαρίσουμε,", "Διευκρινιστικά,", "Συγκεκριμένα,", "Πιο συγκεκριμένα,", "Αυτό σημαίνει ότι...", "Εδώ χρειάζεται μια διευκρίνιση:", "Για να μην υπάρξει παρεξήγηση,", "Όταν λέμε..., εννοούμε...", "Με τον όρο αυτό εννοούμε...", "Αυτό αναφέρεται στο ότι...", "Σε αυτό το σημείο πρέπει να διευκρινιστεί ότι..."], "family": "Στηρίζω", "example": "Πιο συγκεκριμένα, εδώ μιλάμε για λέξεις που ενώνουν λογικά τις προτάσεις και τις παραγράφους.", "warning": "Πρόσεξε: η διευκρίνιση ξεκαθαρίζει το νόημα· δεν επαναλαμβάνει απλώς την ίδια ιδέα."}, {"num": 16, "name": "Αναδιατύπωση / Επανέκφραση", "function": "λένε το ίδιο νόημα με άλλο τρόπο.", "items": ["Με άλλα λόγια,", "Δηλαδή,", "Αλλιώς ειπωμένο,", "Αλλιώς διατυπωμένο,", "Με απλά λόγια,", "Πιο απλά,", "Με λίγα λόγια,", "Με δυο λόγια,", "Στην ουσία,", "Πρακτικά,", "Αυτό ισοδυναμεί με...", "Αυτό σημαίνει, με πιο απλά λόγια, ότι...", "Αν το πούμε αλλιώς, ...", "Το νόημα είναι ότι..."], "family": "Στηρίζω", "example": "Με άλλα λόγια, η καλή συνοχή βοηθά τον αναγνώστη να μην χάνει τη σκέψη σου.", "warning": "Πρόσεξε: η αναδιατύπωση ξαναλέει το ίδιο νόημα με διαφορετικά λόγια."}, {"num": 17, "name": "Προσωπική θέση / Άποψη", "function": "δηλώνουν προσωπική κρίση ή αξιολόγηση.", "items": ["Κατά τη γνώμη μου,", "Κατά την άποψή μου,", "Προσωπικά θεωρώ ότι...", "Από τη δική μου οπτική,", "Όπως το βλέπω,", "Πιστεύω ότι...", "Θεωρώ ότι...", "Είμαι της άποψης ότι...", "Θα υποστήριζα ότι...", "Θα έλεγα πως...", "Η προσωπική μου εκτίμηση είναι ότι...", "Από τη σκοπιά μου, ...", "Τείνω να πιστεύω ότι..."], "family": "Τοποθετούμαι", "example": "Κατά τη γνώμη μου, είναι καλύτερο να μαθαίνουμε λίγες αλλά σωστά χρησιμοποιημένες συνδετικές λέξεις.", "warning": "Πρόσεξε: αυτή η ομάδα ακούγεται πιο προσωπική. Για πιο επίσημο ύφος, προτίμησε την ακαδημαϊκή / απρόσωπη θέση."}, {"num": 18, "name": "Ακαδημαϊκή / Απρόσωπη θέση", "function": "διατυπώνουν θέση με πιο ουδέτερο και επιστημονικό ύφος.", "items": ["Μπορεί να υποστηριχθεί ότι...", "Θα μπορούσε να υποστηριχθεί ότι...", "Είναι εύλογο να υποστηριχθεί ότι...", "Φαίνεται ότι...", "Διαφαίνεται ότι...", "Προκύπτει ότι...", "Τα δεδομένα δείχνουν ότι...", "Τα στοιχεία υποδηλώνουν ότι...", "Μπορεί να συναχθεί ότι...", "Είναι βάσιμο να θεωρηθεί ότι...", "Δικαιολογημένα τίθεται το ερώτημα αν...", "Δεν είναι αβάσιμο να υποτεθεί ότι...", "Η διαθέσιμη εικόνα παραπέμπει στο ότι..."], "family": "Τοποθετούμαι", "example": "Μπορεί να υποστηριχθεί ότι η ρητή διδασκαλία της συνοχής βελτιώνει την ποιότητα του γραπτού λόγου.", "warning": "Πρόσεξε: εδώ το ύφος γίνεται πιο ουδέτερο και πιο κατάλληλο για ακαδημαϊκό λόγο."}, {"num": 19, "name": "Επιφύλαξη / Μετριασμός", "function": "μετριάζουν τον ισχυρισμό και αποφεύγουν την απόλυτη διατύπωση.", "items": ["Ίσως,", "Ενδεχομένως,", "Πιθανόν,", "Πιθανώς,", "Κατά μία έννοια,", "Σε κάποιο βαθμό,", "Ως έναν βαθμό,", "Σε ορισμένες περιπτώσεις,", "Υπό προϋποθέσεις,", "Δεν αποκλείεται να...", "Μπορεί να...", "Θα μπορούσε να...", "Φαίνεται να...", "Τείνει να...", "Είναι πιθανό να...", "Σε μια πρώτη ανάγνωση, ..."], "family": "Τοποθετούμαι", "example": "Είναι πιθανό να χρειάζονται κάποιοι μαθητές περισσότερη καθοδήγηση πριν περάσουν σε πιο σύνθετα κείμενα.", "warning": "Πρόσεξε: ο μετριασμός μαλακώνει τον ισχυρισμό και είναι χρήσιμος όταν δεν θέλεις να ακούγεσαι απόλυτος/η."}, {"num": 20, "name": "Βεβαιότητα / Ισχυρός ισχυρισμός", "function": "εκφράζουν υψηλό βαθμό βεβαιότητας.", "items": ["Ασφαλώς,", "Αναμφίβολα,", "Χωρίς αμφιβολία,", "Δίχως αμφιβολία,", "Είναι σαφές ότι...", "Είναι προφανές ότι...", "Είναι βέβαιο ότι...", "Δεν χωρά αμφιβολία ότι...", "Δεν μπορεί να αμφισβητηθεί ότι...", "Είναι αδιαμφισβήτητο ότι...", "Γίνεται φανερό ότι...", "Είναι δεδομένο ότι...", "Είναι ξεκάθαρο ότι...", "Ένα είναι βέβαιο: ..."], "family": "Τοποθετούμαι", "example": "Είναι σαφές ότι η λογική αλληλουχία κάνει κάθε κείμενο πιο κατανοητό.", "warning": "Πρόσεξε: η πολύ συχνή χρήση ισχυρών βεβαιοτήτων μπορεί να κάνει το ύφος υπερβολικό."}, {"num": 21, "name": "Λύση / Πρόταση / Παρέμβαση", "function": "προτείνουν απάντηση, λύση ή πορεία δράσης.", "items": ["Για να αντιμετωπιστεί αυτό, ...", "Μια πιθανή λύση είναι...", "Μια ρεαλιστική προσέγγιση θα ήταν...", "Ένας τρόπος να αντιμετωπιστεί είναι...", "Ενδεδειγμένη λύση αποτελεί...", "Θα ήταν σκόπιμο να...", "Χρειάζεται να...", "Είναι αναγκαίο να...", "Θα μπορούσαν να ληφθούν μέτρα...", "Προτεραιότητα πρέπει να δοθεί...", "Ένα πρώτο βήμα θα ήταν...", "Μακροπρόθεσμα, θα έπρεπε να...", "Πρακτικότερη λύση θα ήταν...", "Σε επίπεδο πολιτικής / σχολείου / θεσμών, απαιτείται να..."], "family": "Προτείνω", "example": "Για να αντιμετωπιστεί αυτό, οι συνδετικές λέξεις μπορούν να διδαχθούν ομαδοποιημένες ανά λειτουργία.", "warning": ""}, {"num": 22, "name": "Έκβαση / Αναμενόμενο όφελος", "function": "δείχνουν τι θα πετύχει μια λύση ή μια ενέργεια.", "items": ["Έτσι θα ήταν δυνατό να...", "Αυτό θα συνέβαλλε στο να...", "Αυτό θα επέτρεπε...", "Αυτό θα βοηθούσε να...", "Το αποτέλεσμα θα ήταν...", "Με τον τρόπο αυτό θα...", "Σε βάθος χρόνου θα...", "Έτσι θα περιοριζόταν...", "Έτσι θα ενισχυόταν...", "Αυτό θα άνοιγε τον δρόμο για...", "Αυτό θα δημιουργούσε τις προϋποθέσεις για...", "Αυτό θα λειτουργούσε υποστηρικτικά για...", "Αυτό θα οδηγούσε τελικά σε...", "Έτσι θα γινόταν εφικτό να..."], "family": "Προτείνω", "example": "Αυτό θα βοηθούσε να οργανώνουν οι μαθητές καλύτερα τα επιχειρήματά τους.", "warning": ""}, {"num": 23, "name": "Κατακλείδα / Συνοψίζοντας", "function": "κλείνουν το κείμενο και συμπυκνώνουν το τελικό νόημα.", "items": ["Συνοψίζοντας,", "Συμπερασματικά,", "Καταληκτικά,", "Κλείνοντας,", "Εν κατακλείδι,", "Με βάση τα παραπάνω,", "Από όλα τα παραπάνω προκύπτει ότι...", "Συνολικά,", "Σε τελική ανάλυση,", "Τελικά,", "Το βασικό συμπέρασμα είναι ότι...", "Το ουσιαστικό είναι ότι...", "Αν θέλαμε να κρατήσουμε το βασικό σημείο, αυτό θα ήταν ότι...", "Το τελικό ζητούμενο είναι..."], "family": "Κλείνω", "example": "Συνοψίζοντας, η συνοχή δεν είναι διακόσμηση· είναι βασικό στοιχείο κάθε καλού κειμένου.", "warning": ""}];
+    const groups = {"Ξεκινώ": ["Έναρξη", "Οριοθέτηση θέματος", "Αρίθμηση / Διαδοχή"], "Χτίζω": ["Προσθήκη", "Έμφαση", "Ομοιότητα / Παραλληλισμός"], "Αλλάζω πορεία": ["Αντίθεση", "Παραχώρηση", "Διόρθωση / Ανασκευή / Ακρίβεια"], "Εξηγώ": ["Αιτία / Αιτιολόγηση", "Αποτέλεσμα / Συνέπεια", "Σκοπός", "Προϋπόθεση / Όρος"], "Στηρίζω": ["Παράδειγμα / Εικονογράφηση", "Διευκρίνιση", "Αναδιατύπωση / Επανέκφραση"], "Τοποθετούμαι": ["Προσωπική θέση / Άποψη", "Ακαδημαϊκή / Απρόσωπη θέση", "Επιφύλαξη / Μετριασμός", "Βεβαιότητα / Ισχυρός ισχυρισμός"], "Προτείνω": ["Λύση / Πρόταση / Παρέμβαση", "Έκβαση / Αναμενόμενο όφελος"], "Κλείνω": ["Κατακλείδα / Συνοψίζοντας"]};
+    const quickButtons = [["ξεκινήσω", "Ξεκινήσω το κείμενο", "Έναρξη"], ["οριοθετήσω", "Οριοθετήσω το θέμα", "Οριοθέτηση θέματος"], ["προσθέσω", "Προσθέσω ιδέα", "Προσθήκη"], ["τονίσω", "Τονίσω κάτι σημαντικό", "Έμφαση"], ["συγκρίνω", "Συγκρίνω", "Ομοιότητα / Παραλληλισμός"], ["αντίθεση", "Δείξω αντίθεση", "Αντίθεση"], ["παραχωρήσω", "Παραχωρήσω", "Παραχώρηση"], ["αιτία", "Δείξω αιτία", "Αιτία / Αιτιολόγηση"], ["αποτέλεσμα", "Δείξω αποτέλεσμα", "Αποτέλεσμα / Συνέπεια"], ["σκοπό", "Δείξω σκοπό", "Σκοπός"], ["όρο", "Δηλώσω όρο", "Προϋπόθεση / Όρος"], ["παράδειγμα", "Δώσω παράδειγμα", "Παράδειγμα / Εικονογράφηση"], ["διευκρινίσω", "Διευκρινίσω", "Διευκρίνιση"], ["ξαναπώ", "Πω αλλιώς την ιδέα", "Αναδιατύπωση / Επανέκφραση"], ["άποψη", "Εκφράσω άποψη", "Προσωπική θέση / Άποψη"], ["ακαδημαϊκά", "Ακουστώ πιο ακαδημαϊκά", "Ακαδημαϊκή / Απρόσωπη θέση"], ["μετριάσω", "Μετριάσω τον ισχυρισμό", "Επιφύλαξη / Μετριασμός"], ["βεβαιότητα", "Ακουστώ πιο βέβαιος/η", "Βεβαιότητα / Ισχυρός ισχυρισμός"], ["λύση", "Προτείνω λύση", "Λύση / Πρόταση / Παρέμβαση"], ["όφελος", "Δείξω όφελος", "Έκβαση / Αναμενόμενο όφελος"], ["κλείσω", "Κλείσω το κείμενο", "Κατακλείδα / Συνοψίζοντας"]];
+    const confusions = [{"title": "Αντίθεση vs Παραχώρηση", "good": "Αντίθεση: «Ωστόσο, η εφαρμογή του μέτρου παραμένει δύσκολη.» / Παραχώρηση: «Αν και το μέτρο είναι χρήσιμο, η εφαρμογή του παραμένει δύσκολη.»", "tip": "Η αντίθεση φέρνει μια διαφορετική πλευρά. Η παραχώρηση δέχεται κάτι πρώτα και μετά αλλάζει πορεία."}, {"title": "Αιτία vs Αποτέλεσμα", "good": "Αιτία: «Επειδή δεν υπήρξε σχεδιασμός, δημιουργήθηκαν προβλήματα.» / Αποτέλεσμα: «Δεν υπήρξε σχεδιασμός· γι’ αυτό δημιουργήθηκαν προβλήματα.»", "tip": "Η αιτία απαντά στο «γιατί». Το αποτέλεσμα δείχνει τι ακολούθησε."}, {"title": "Διευκρίνιση vs Αναδιατύπωση", "good": "Διευκρίνιση: «Για να γίνει σαφές, η ρύθμιση αφορά μόνο τα δημόσια σχολεία.» / Αναδιατύπωση: «Με άλλα λόγια, τα ιδιωτικά σχολεία δεν περιλαμβάνονται.»", "tip": "Η διευκρίνιση ξεκαθαρίζει. Η αναδιατύπωση ξαναλέει το ίδιο νόημα με άλλο τρόπο."}, {"title": "Προσωπική θέση vs Ακαδημαϊκή θέση", "good": "Προσωπική θέση: «Κατά τη γνώμη μου, χρειάζεται αλλαγή.» / Ακαδημαϊκή θέση: «Μπορεί να υποστηριχθεί ότι απαιτείται αλλαγή.»", "tip": "Η πρώτη ακούγεται προσωπική, ενώ η δεύτερη πιο ουδέτερη και επιστημονική."}, {"title": "Μετριασμός vs Βεβαιότητα", "good": "Μετριασμός: «Είναι πιθανό να χρειάζεται περισσότερη εξάσκηση.» / Βεβαιότητα: «Είναι σαφές ότι η εξάσκηση βοηθά.»", "tip": "Μετριάζεις όταν δεν θέλεις να ακουστείς απόλυτος/η. Ενισχύεις όταν θέλεις καθαρή και σίγουρη διατύπωση."}, {"title": "Όμως vs Αν και", "good": "«Όμως, η λύση αυτή έχει όρια.» / «Αν και η λύση αυτή βοηθά, έχει όρια.»", "tip": "Το «όμως» συνδέει προτάσεις ή φράσεις σε επίπεδο λόγου. Το «αν και» ανοίγει δευτερεύουσα παραχωρητική πρόταση."}];
+    const familyDescriptions = {"Ξεκινώ": "Μπαίνω στο θέμα και δίνω κατεύθυνση στον αναγνώστη.", "Χτίζω": "Προσθέτω, ενισχύω και συνδέω ιδέες με καθαρό τρόπο.", "Αλλάζω πορεία": "Αντιπαραθέτω, παραχωρώ ή διορθώνω την πορεία του λόγου.", "Εξηγώ": "Δείχνω αιτία, αποτέλεσμα, σκοπό και προϋπόθεση.", "Στηρίζω": "Φέρνω παράδειγμα, ξεκαθαρίζω και ξαναλέω αλλιώς το νόημα.", "Τοποθετούμαι": "Παίρνω θέση, μετριάζω ή ενισχύω τον ισχυρισμό μου.", "Προτείνω": "Δείχνω λύση και το πιθανό όφελος που ακολουθεί.", "Κλείνω": "Ολοκληρώνω το κείμενο με καθαρή κατακλείδα."};
+    let currentSearch = '';
+
+    const categoriesEl = document.getElementById('categories');
+    const quickGridEl = document.getElementById('quickGrid');
+    const familyNavEl = document.getElementById('familyNav');
+    const confusionGridEl = document.getElementById('confusionGrid');
+    const resultsNoteEl = document.getElementById('resultsNote');
+    const searchInput = document.getElementById('searchInput');
+
+    function slugify(text) {
+      return Array.from(text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''))
+        .map(ch => /[a-z0-9]/.test(ch) ? ch : (ch === ' ' ? '-' : ch.charCodeAt(0).toString(16)))
+        .join('')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function highlightMatch(text, query) {
+      if (!query) return escapeHtml(text);
+      const regex = new RegExp(`(${escapeRegExp(query)})`, 'ig');
+      return escapeHtml(text).replace(regex, '<mark>$1</mark>');
+    }
+
+    function visibleItems(items) {
+      if (!currentSearch) return items;
+      const q = currentSearch.toLowerCase();
+      const matched = items.filter(item => item.toLowerCase().includes(q));
+      return matched.length ? matched : items;
+    }
+
+    function categoryMatches(cat) {
+      if (!currentSearch) return true;
+      const q = currentSearch.toLowerCase();
+      return cat.name.toLowerCase().includes(q) ||
+             cat.function.toLowerCase().includes(q) ||
+             cat.family.toLowerCase().includes(q) ||
+             cat.items.some(item => item.toLowerCase().includes(q));
+    }
+
+    function renderQuickButtons() {
+      quickGridEl.innerHTML = '';
+      quickButtons.forEach(([id, label, target]) => {
+        const btn = document.createElement('button');
+        btn.className = 'quick-btn';
+        btn.type = 'button';
+        btn.innerHTML = `<strong>${label}</strong><small>${target}</small>`;
+        btn.addEventListener('click', () => jumpToCategory(target));
+        quickGridEl.appendChild(btn);
+      });
+    }
+
+    function renderFamilyNav() {
+      familyNavEl.innerHTML = '';
+      Object.entries(groups).forEach(([family, names]) => {
+        const a = document.createElement('a');
+        a.href = `#family-${slugify(family)}`;
+        a.className = `family-card family-${slugify(family)}`;
+        a.innerHTML = `
+          <h3>${family}</h3>
+          <p>${familyDescriptions[family]}</p>
+          <div class="mini-tags">
+            ${names.map(name => `<span class="mini-tag">${name}</span>`).join('')}
+          </div>`;
+        familyNavEl.appendChild(a);
+      });
+    }
+
+    function renderConfusions() {
+      confusionGridEl.innerHTML = '';
+      confusions.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'confusion-card';
+        card.innerHTML = `<h3>${item.title}</h3><p><strong>Παράδειγμα:</strong> ${item.good}</p><p><strong>Σχόλιο:</strong> ${item.tip}</p>`;
+        confusionGridEl.appendChild(card);
+      });
+    }
+
+    function renderCategories() {
+      categoriesEl.innerHTML = '';
+      const filtered = categories.filter(categoryMatches);
+      const visibleCount = filtered.length;
+      resultsNoteEl.textContent = currentSearch
+        ? `Βρέθηκαν ${visibleCount} κατηγορί${visibleCount === 1 ? 'α' : 'ες'} για «${currentSearch}».`
+        : 'Προβάλλονται όλες οι κατηγορίες.';
+
+      Object.entries(groups).forEach(([family]) => {
+        const familyCats = filtered.filter(cat => cat.family === family);
+        if (!familyCats.length) return;
+
+        const familySection = document.createElement('section');
+        familySection.className = `family-section family-${slugify(family)}`;
+        familySection.id = `family-${slugify(family)}`;
+        familySection.innerHTML = `<div class="family-header"><h3>${family}</h3><p>${familyDescriptions[family]}</p></div><div class="family-body"></div>`;
+        const familyBody = familySection.querySelector('.family-body');
+
+        familyCats.forEach(cat => {
+          const details = document.createElement('details');
+          details.className = 'category';
+          details.dataset.category = cat.name;
+          if (currentSearch) details.open = true;
+
+          const phrases = visibleItems(cat.items);
+          details.innerHTML = `
+            <summary>
+              <div class="summary-title">
+                <strong>${cat.num}. ${cat.name}</strong>
+                <span>${cat.function}</span>
+              </div>
+              <div class="badge">${cat.items.length}</div>
+            </summary>
+            <div class="category-content">
+              <div class="meta-row">
+                <div class="example-box">
+                  <span class="box-label">Παράδειγμα χρήσης</span>
+                  <div>${cat.example}</div>
+                </div>
+                <div class="warning-box">
+                  <span class="box-label">${cat.warning ? 'Πρόσεξε' : 'Μελέτησέ το έτσι'}</span>
+                  <div>${cat.warning || 'Ξεκίνα πάντα από τη λειτουργία της κατηγορίας και ύστερα διάλεξε τη φράση που ταιριάζει καλύτερα στο δικό σου κείμενο.'}</div>
+                </div>
+              </div>
+              <div class="phrase-grid">
+                ${phrases.map(item => `<button class="phrase-pill" type="button" data-copy="${escapeHtml(item)}">${highlightMatch(item, currentSearch)}</button>`).join('')}
+              </div>
+              <div class="helper-note">Πάτησε πάνω σε μια φράση για να την αντιγράψεις.</div>
+            </div>`;
+          familyBody.appendChild(details);
+        });
+
+        categoriesEl.appendChild(familySection);
+      });
+
+      bindCopyButtons();
+    }
+
+    function bindCopyButtons() {
+      document.querySelectorAll('.phrase-pill').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const text = btn.getAttribute('data-copy');
+          const original = btn.textContent;
+          try {
+            await navigator.clipboard.writeText(text);
+            btn.textContent = 'Αντιγράφηκε!';
+            setTimeout(() => { btn.textContent = original; }, 900);
+          } catch (e) {}
+        });
+      });
+    }
+
+    function jumpToCategory(name) {
+      const details = [...document.querySelectorAll('details.category')].find(d => d.dataset.category === name);
+      if (details) {
+        details.open = true;
+        details.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        currentSearch = '';
+        searchInput.value = '';
+        renderCategories();
+        setTimeout(() => {
+          const target = [...document.querySelectorAll('details.category')].find(d => d.dataset.category === name);
+          if (target) {
+            target.open = true;
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 60);
+      }
+    }
+
+    searchInput.addEventListener('input', e => {
+      currentSearch = e.target.value.trim();
+      renderCategories();
+    });
+
+    document.getElementById('clearSearchBtn').addEventListener('click', () => {
+      currentSearch = '';
+      searchInput.value = '';
+      renderCategories();
+    });
+
+    document.getElementById('openAllBtn').addEventListener('click', () => {
+      document.querySelectorAll('details.section-panel, details.category').forEach(d => d.open = true);
+    });
+
+    document.getElementById('closeAllBtn').addEventListener('click', () => {
+      document.querySelectorAll('details.section-panel, details.category').forEach(d => d.open = false);
+    });
+
+    document.querySelectorAll('.hl').forEach(span => {
+      span.addEventListener('click', () => jumpToCategory(span.dataset.target));
+    });
+
+    renderQuickButtons();
+    renderFamilyNav();
+    renderConfusions();
+    renderCategories();
+  </script>
+</body>
+</html>
